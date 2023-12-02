@@ -10,7 +10,7 @@ fabric:
         isis_net: 49.0001.0000.0000.0021.00
       - device: FEN2
         ipv4_address: 192.168.254.22/32
-        isis_net: 49.0001.0000.0000.0021.00
+        isis_net: 49.0001.0000.0000.0022.00
     interfaces:
 
       - ref: FBN1_1_1
@@ -46,7 +46,7 @@ fabric:
         ipv4_address: 192.168.253.120/31
         vrf: default
       - ref: FEN2_1_1
-        device: FEN1
+        device: FEN2
         id: eth1/1
         description: FBN1 eth1/3
         ipv4_address: 192.168.253.121/31
@@ -59,7 +59,7 @@ fabric:
         ipv4_address: 192.168.253.122/31
         vrf: default
       - ref: FEN2_1_2
-        device: FEN1
+        device: FEN2
         id: eth1/2
         description: FBN1 eth1/4
         ipv4_address: 192.168.253.123/31

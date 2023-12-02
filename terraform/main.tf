@@ -55,6 +55,8 @@ resource "nxos_vrf" "default" {
 }
 
 resource "nxos_ipv4_vrf" "default" {
+  for_each     = toset([for fn in local.devices : fn.name])
+  device       = each.key
   name = "default"
 }
 
