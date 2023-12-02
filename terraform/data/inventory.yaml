@@ -5,8 +5,8 @@ fabric:
     FENs:
       - name: FEN1
         url: https://192.168.217.21
-#      - name: FEN2
-#        url: https://192.168.217.22
+      - name: FEN2
+        url: https://192.168.217.22
 
     FBNs:
       - name: FBN1

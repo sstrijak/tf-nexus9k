@@ -12,11 +12,25 @@ fabric:
         ipv4_address: 192.168.254.22/32
         isis_net: 49.0001.0000.0000.0021.00
     interfaces:
+
+      - ref: FBN1_1_1
+        device: FBN1
+        id: eth1/1
+        description: FEN1 eth1/1
+        ipv4_address: 192.168.253.110/31
+        vrf: default
       - ref: FEN1_1_1
         device: FEN1
         id: eth1/1
         description: FBN1 eth1/1
         ipv4_address: 192.168.253.111/31
+        vrf: default
+
+      - ref: FBN1_1_2
+        device: FBN1
+        id: eth1/2
+        description: FEN1 eth1/2
+        ipv4_address: 192.168.253.112/31
         vrf: default
       - ref: FEN1_1_2
         device: FEN1
@@ -24,16 +38,30 @@ fabric:
         description: FBN1 eth1/2
         ipv4_address: 192.168.253.113/31
         vrf: default
-      - ref: FBN1_1_1
+
+      - ref: FBN1_1_3
         device: FBN1
-        id: eth1/1
-        description: FEN1 eth1/1
-        ipv4_address: 192.168.253.110/31
+        id: eth1/3
+        description: FEN2 eth1/1
+        ipv4_address: 192.168.253.120/31
         vrf: default
-      - ref: FBN1_1_2
+      - ref: FEN2_1_1
+        device: FEN1
+        id: eth1/1
+        description: FBN1 eth1/3
+        ipv4_address: 192.168.253.121/31
+        vrf: default
+
+      - ref: FBN1_1_4
         device: FBN1
+        id: eth1/4
+        description: FEN2 eth1/2
+        ipv4_address: 192.168.253.122/31
+        vrf: default
+      - ref: FEN2_1_2
+        device: FEN1
         id: eth1/2
-        description: FEN1 eth1/2
-        ipv4_address: 192.168.253.112/31
+        description: FBN1 eth1/4
+        ipv4_address: 192.168.253.123/31
         vrf: default
 
