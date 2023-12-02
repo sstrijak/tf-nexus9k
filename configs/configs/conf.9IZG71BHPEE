@@ -1,0 +1,37 @@
+switchname fbn1
+featute nxapi
+vdc fbn id 1
+  limit-resource vlan minimum 16 maximum 4094
+  limit-resource vrf minimum 2 maximum 4096
+  limit-resource port-channel minimum 0 maximum 511
+  limit-resource u4route-mem minimum 248 maximum 248
+  limit-resource u6route-mem minimum 96 maximum 96
+  limit-resource m4route-mem minimum 58 maximum 58
+  limit-resource m6route-mem minimum 8 maximum 8
+
+username admin password 5 $5$OGCAHD$4tUuM9QtAQhzdwo9pZjqz6xodBezqSDTzRyyWFV3.78 role network-admin
+username sstrijak password 5 $5$JMFCDH$zPqloGvBYpX4b7oyijX3sfEPFSC538B13ynG9YsScv6  role network-admin
+username dna password 5 $5$PHBLPF$32sRjhuR8OQIB5tvgkj4L/zqrsnab4dvaKQlPvZJZy5  role network-admin
+
+ssh key rsa 2048
+ip domain-lookup
+ip domain-name 7r.com.au
+ip name-server 10.254.254.253 use-vrf management
+no system default switchport
+copp profile strict
+rmon event 1 log trap public description FATAL(1) owner PMON@FATAL
+rmon event 2 log trap public description CRITICAL(2) owner PMON@CRITICAL
+rmon event 3 log trap public description ERROR(3) owner PMON@ERROR
+rmon event 4 log trap public description WARNING(4) owner PMON@WARNING
+rmon event 5 log trap public description INFORMATION(5) owner PMON@INFO
+snmp-server community tftpb00t group network-operator
+ntp server 10.254.254.253 use-vrf management
+
+vlan 1
+
+vrf context management
+  ip route 0.0.0.0/0 192.168.217.2
+
+interface mgmt0
+  vrf member management
+  ip address 192.168.217.11/24

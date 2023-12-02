@@ -1,0 +1,32 @@
+---
+fabric:
+  underlay:
+    loopbacks:
+      - device: FBN1
+        ipv4_address: 192.168.254.11/32
+      - device: FEN1
+        ipv4_address: 192.168.254.21/32
+      - device: FEN2
+        ipv4_address: 192.168.254.22/32
+    links:
+      - name: FEN1_1
+        device: FEN1
+        id: Ethernet1/1
+        description: FBN1 Ethernet 1/1
+        ipv4_address: 192.168.253.111/31
+      - name: FEN1_2
+        device: FEN1
+        id: Ethernet1/2
+        description: FBN1 Ethernet 1/2
+        ipv4_address: 192.168.253.113/31
+      - name: FBN1_1
+        device: FBN1
+        id: Ethernet1/1
+        description: FEN1 Ethernet 1/1
+        ipv4_address: 192.168.253.110/31
+      - name: FBN1_2
+        device: FBN1
+        id: Ethernet1/2
+        description: FEN1 Ethernet 1/2
+        ipv4_address: 192.168.253.112/31
+
